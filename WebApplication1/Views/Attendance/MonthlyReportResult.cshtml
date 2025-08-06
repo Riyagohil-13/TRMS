@@ -1,0 +1,42 @@
+﻿@using WebApplication1.Models.ViewModel
+@model IEnumerable<MonthlyAttendanceViewModel>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/attendance.css" asp-append-version="true" />
+}
+
+<body>
+    <h2 class="page-title">Monthly Attendance Reports</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-warning">@ViewBag.Message</div>
+}
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>VTR ID</th>
+                <th>Name</th>
+                <th>Total Present</th>
+                <th>Total Absent</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.VTRId</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.TotalPresent</td>
+                    <td>@item.TotalAbsent</td>
+                    <td>@item.Percentage.ToString("F2")%</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+</body>

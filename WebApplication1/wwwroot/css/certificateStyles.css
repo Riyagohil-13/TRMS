@@ -1,0 +1,55 @@
+﻿.certificate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+.header-left .gnfc-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cin {
+    font-size: 13px;
+}
+
+.address {
+    font-size: 13px;
+}
+
+.header-right {
+    text-align: right;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.orange-line {
+    border: 2px solid orange;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.certificate-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}

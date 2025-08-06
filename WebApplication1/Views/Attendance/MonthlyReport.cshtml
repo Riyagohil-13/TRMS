@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Monthly Attendance Report";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/attendance.css" asp-append-version="true" />
+}
+
+
+<body>
+    <h2 class="page-title">Monthly Attendance Generate Report</h2>
+
+<form asp-action="MonthlyReportResult" method="post">
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <label>Month</label>
+            <select class="form-control" name="month">
+                @foreach (var item in ViewBag.Months)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Year</label>
+            <select class="form-control" name="year">
+                @foreach (var y in ViewBag.Years)
+                {
+                    <option value="@y">@y</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>VTR ID (Optional)</label>
+            <input type="text" name="vtrId" class="form-control" />
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+        </div>
+    </div>
+</form>
+</body>

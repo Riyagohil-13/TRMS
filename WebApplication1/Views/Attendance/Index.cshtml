@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication1.Models.Attendance>
+
+
+<head>
+    <link href="~/css/list.css" rel="stylesheet" media="all" />
+</head>
+
+<body>
+    <h2 class="page-title">Attendance Records</h2>
+
+<div class="card custom-card">
+    <div class="card-header custom-card-header">
+        <h3 class="italic">
+                <a href="@Url.Action("Create", "Attendance")" class="btn add-student-btn">
+                    <i class="fa fa-plus-circle"></i> Create Attendance
+                </a>
+        </h3>
+            <div class="search-container">
+                <form class="search-form" asp-action="Index" method="GET">
+                    <input name="searchString" class="search-input" type="search" placeholder="Search by VTR ID or Name" />
+                    <button class="search-btn" type="submit">Search</button>
+                    <button class="search-btn m-3" asp-action="Index" type="submit">Back to List</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+
+<!-- Table Section -->
+<div class="table-responsive">
+    <table class="custom-table" id="tbl-list">
+        <thead>
+            <tr>
+                <th>VTR ID</th>
+                <th>First Name</th>
+                <th>Date</th>
+                <th>Department</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in Model)
+            {
+                <tr>
+                    <td>@record.Trainee?.VTRId</td>
+                    <td>@record.Trainee?.Gnfc?.FirstName</td>
+                    <td>@record.Date.ToShortDateString()</td>
+                    <td>@record.Trainee?.Gnfc?.Department?.Name</td>
+                    <td class="@(record.IsPresent ? "status-present" : "status-absent")">
+                        @(record.IsPresent ? "Present" : "Absent")
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+</body>

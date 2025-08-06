@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.TrainingCompletionReport>
+@{
+    ViewData["Title"] = "All Training Reports";
+}
+<head>
+    <link href="~/css/list.css" rel="stylesheet" media="all" />
+</head>
+
+<h2 class="page-title">@ViewData["Title"]</h2>
+
+<div class="card custom-card">
+    <div class="card-header custom-card-header">
+        <h3 class="italic">
+            <a href="@Url.Action("Create", "TrainingCompletionReport")" class="btn add-student-btn">
+                <i class="fa fa-plus-circle"></i> Create New Report
+            </a>
+        </h3>
+        <div class="search-container">
+            
+        </div>
+    </div>
+</div>
+
+<!-- Table Section -->
+<div class="table-responsive">
+    <table class="custom-table" id="tbl-list">
+        <thead>
+            <tr>
+                <th>
+                    <a style="color:white; text-decoration:none;" asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParam"]" asp-route-searchString="@Context.Request.Query["searchString"]">
+                        V.T.R ID 
+                    </a>
+                </th>
+                <th>Full Name</th>
+                <th>College</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var report in Model)
+            {
+                <tr>
+                    <td>@report.VTRId</td>
+                    <td>@report.FullName</td>
+                    <td>@report.College</td>
+                    <td>@report.Department</td>
+                    <td>
+                        <a asp-action="GeneratePdf" asp-route-id="@report.ReportID" class="btn btn-sm btn-primary">Download PDF</a>
+                        <a asp-action="Edit" asp-route-id="@report.ReportID" class="btn btn-sm btn-success">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@report.ReportID" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

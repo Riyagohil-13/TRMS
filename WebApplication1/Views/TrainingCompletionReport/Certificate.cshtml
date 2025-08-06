@@ -1,0 +1,175 @@
+﻿@model WebApplication1.Models.TrainingCompletionReport
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Training Completion Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #000;
+        }
+
+        .certificate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header-left .gnfc-logo {
+            height: 70px;
+            width: auto;
+        }
+
+        .header-center {
+            text-align: center;
+            font-size: 20px;
+            flex: 1;
+            margin: 0 20px;
+        }
+
+            .header-center .company-name {
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 1.4;
+            }
+
+            .header-center .cin {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+            .header-center .address {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+        .header-right {
+            font-size: 13px;
+            text-align: right;
+            min-width: 150px;
+        }
+
+        .orange-line {
+            border: 4px solid orange;
+            margin-top: 10px;
+        }
+
+        .certificate-title {
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .details {
+           
+            width: 100%;
+            margin-top: 30px;
+            font-size: 18px;
+            border-collapse: collapse;
+            font-weight: bold;
+        }
+
+            .details td {
+                padding: 10px 8px;
+                vertical-align: top;
+            }
+
+                .details td:first-child {
+                    width: 220px;
+                }
+
+        .note {
+            font-size: 14px;
+            margin-top: 20px;
+           
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .signature-space {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-header">
+        <div class="header-left">
+            
+        </div>
+        <div class="header-center">
+            <div class="company-name">Gujarat Narmada Valley<br />Fertilizers & Chemicals Limited</div>
+            <div class="cin">CIN : L24110GJ1976PLC002903</div>
+            <div class="address">
+                P.O. Narmadanagar - 392015, Dist. Bharuch, Gujarat, India<br />
+                Ph. (02642) 247001, 247002 Website : www.gnfc.in
+            </div>
+        </div>
+        <div class="header-right">
+            <div><strong>TRG/VTI/2024-25</strong></div>
+            <div><strong>Date:</strong> @DateTime.Now.ToString("dd/MM/yyyy")</div>
+        </div>
+    </div>
+
+    <hr class="orange-line" />
+    <h2 class="certificate-title">INDUSTRIAL TRAINING CERTIFICATE</h2>
+
+    <table class="details">
+        <tr>
+            <td><b>1. Name</b></td>
+            <td>: @Model.FullName</td>
+        </tr>
+        <tr>
+            <td><b>2. Institute</b></td>
+            <td>: @Model.College</td>
+        </tr>
+        <tr>
+            <td><b>3. Course</b></td>
+            <td>: @Model.Course</td>
+        </tr>
+        <tr>
+            <td><b>4. Year /Semester</b></td>
+            <td>: @Model.Semester</td>
+        </tr>
+        <tr>
+            <td><b>5. Study Department</b></td>
+            <td>: @Model.Department</td>
+        </tr>
+        <tr>
+            <td><b>6. Training Period</b></td>
+            <td>: @Model.TrainingStartDate.ToString("dd/MM/yyyy") to @Model.TrainingEndDate.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <td><b>7. Behaviour during Training</b></td>
+            <td>: @Model.Behaviour</td>
+        </tr>
+        <tr>
+            <td><b>8. Progress during Training</b></td>
+            <td>: @Model.Progress</td>
+        </tr>
+    </table>
+
+    <p class="note">
+        Training being part of course curriculum, this certificate is issued for Academic Purpose only.
+    </p>
+
+    <div class="footer">
+        For GNFC Limited<br /><br />
+        <div class="signature-space"></div>
+        S C Mehta<br />
+        General Manager
+    </div>
+</body>
+</html>

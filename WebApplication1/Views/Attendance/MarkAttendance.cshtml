@@ -1,0 +1,50 @@
+﻿@model List<WebApplication1.Models.Gnfc>
+
+@{
+    ViewBag.Title = "Mark Attendance";
+    var date = (DateTime)ViewBag.Date;
+    var deptId = (int)ViewBag.DepartmentId;
+}
+
+<!-- Page Title -->
+<h2 style="text-align: center; color: #4e73df; margin-top: 20px; font-weight: bold; font-size: 28px;">
+     Mark Attendance
+</h2>
+
+
+
+<form asp-action="Submit" method="post" style="max-width: 900px; margin: auto;">
+    <input type="hidden" name="date" value="@date.ToString("yyyy-MM-dd")" />
+    <input type="hidden" name="departmentId" value="@deptId" />
+
+    <table class="table table-bordered table-striped" style="border: 1px solid #ddd;">
+        <thead style="background-color: #3498db; color: white;">
+            <tr>
+                <th>VTR ID</th>
+                <th>First Name</th>
+                <th style="text-align: center;">Present</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].Trainee?.VTRId</td>
+                    <td>@Model[i].FirstName</td>
+                    <td style="text-align: center;">
+                        <input type="hidden" name="attendanceList[@i].TraineeId" value="@Model[i].TraineeId" />
+                        <input type="hidden" name="attendanceList[@i].Date" value="@date.ToString("yyyy-MM-dd")" />
+                        <input type="hidden" name="attendanceList[@i].DepartmentId" value="@deptId" />
+                        <input type="checkbox" name="attendanceList[@i].IsPresent" value="true" checked />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button type="submit" class="btn btn-primary" style="padding: 10px 30px; font-weight: bold;">
+            Submit Attendance
+        </button>
+    </div>
+</form>
