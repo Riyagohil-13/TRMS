@@ -1,4 +1,4 @@
-TRMS (Training Management System)
+# TRMS (Training Management System)
 # OUTPUT
 
 <img width="450" height="419" alt="admin" src="https://github.com/user-attachments/assets/1e6a7779-5dee-4430-8133-f469059dc853" />
