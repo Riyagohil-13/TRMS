@@ -1,4 +1,4 @@
-TRMS(Traning Management System)
+
 #OUTPUT
 <img width="602" height="419" alt="admin" src="https://github.com/user-attachments/assets/1e6a7779-5dee-4430-8133-f469059dc853" />
 <img width="602" height="301" alt="Add Trainee" src="https://github.com/user-attachments/assets/b67b56a6-51a5-46d0-8ca0-3e09d24f7a3e" />
