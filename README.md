@@ -1,5 +1,5 @@
 <img width="450" height="419" alt="admin" src="https://github.com/user-attachments/assets/1e6a7779-5dee-4430-8133-f469059dc853" />
-<img width="602" height="301" alt="Add Trainee" src="https://github.com/user-attachments/assets/b67b56a6-51a5-46d0-8ca0-3e09d24f7a3e" />
+<img width="450" height="301" alt="Add Trainee" src="https://github.com/user-attachments/assets/b67b56a6-51a5-46d0-8ca0-3e09d24f7a3e" />
 <img width="602" height="288" alt="Add department" src="https://github.com/user-attachments/assets/5709073e-2ded-434e-b0af-7c59e5833beb" />
 <img width="602" height="459" alt="department" src="https://github.com/user-attachments/assets/8b81b4d2-495e-4251-aae1-d6a0ce86c43b" />
 <img width="602" height="392" alt="Add clg" src="https://github.com/user-attachments/assets/6b018d96-915e-4a37-828b-903cc1cc30e9" />
